@@ -1,0 +1,136 @@
+    <!doctype html>
+    <html lang="pt-br">
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+        <link rel="stylesheet" href="css/style.css" >
+        <title>Agenda</title>
+      </head>
+      <body>
+
+    <div class="container">
+        <h1 id="txttitulo"></h1>
+
+
+
+
+
+        <div id="cadastrar" class="divPage">
+        <form  id="formCadastrar">
+         
+         <label for="nome" >Nome</label>
+          <input type="text" id="nome" class="form-control">    
+          
+          <label for="email" >email</label>
+          <input type="text" id="email" class="form-control">
+          
+          <label for="telefone" >telefone</label>
+          <input type="tel" id="telefone" class="form-control">   
+     
+          <br> 
+          <div class="form-group">
+           <label for="foto" >telefone</label>
+           <input type="file" id="foto" class="form-control">  
+           <progress value="0" max="100" id="upload_foto"> 
+           </div>
+
+          <button class="btn btn-primary" onclick="cadastrar()">Salvar</button>
+          <button type="button" class="btn btn-success"onclick="pageListar()">Cancelar</button>
+          </form>
+        </div>
+
+          
+
+
+
+    <div id="listar"  class="divPage">
+        <div class="panel panel-default">
+     <div class="panel-body">
+         <button class="btn btn-success" onclick="pageCadastrar()">Cadastrar</button>
+         <br>
+          <br>
+       <table class="table  table-bordered  table-sm " >
+         <tr>
+           <th>Nome</th>
+           <th>Email</th>
+           <th>Telefone</th>
+           <th>Editar</th>
+            <th>Apagar</th>
+         </tr>
+           <tbody id="tabelaContato"></tbody>
+        
+       </table>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="editar"  class="divPage">
+       <form  id="pageEditar" >
+         <label for="nome" >Nome</label>
+          <input type="text" id="nome_editar" class="form-control">    
+          <label for="email_editar" >email</label>
+          <input type="text" id="email_editar" class="form-control">
+          <label for="telefone" >telefone</label>
+          <input type="tel" id="telefone_editar" class="form-control">   
+          <br> 
+          <button class="btn btn-primary" onclick="editar()">Salvar</button>
+          <button type="button" class="btn btn-success"onclick="pageListar()">Cancelar</button>
+          <input type="hidden" name="" id="key_editar" value="">
+          </form>
+         </div>
+  
+
+
+
+      <div id="pageLogin" class="divPage">
+        <form  id="formLogin" >
+          <label for="email_login" >login</label>
+          <input type="text" id="email_login" class="form-control">
+          <label for="senha_login" >senha</label>
+          <input type="password" id="senha_login" class="form-control">   
+          <br> 
+           <button class="btn btn-primary" onclick="logar()">criar usuario</button>
+          <button class="btn btn-primary" onclick="logar()">Entrar</button>
+
+
+          <button class="btn btn-primary" onclick="logarComFacebook()">Logar com facebook</button>
+
+          <button class="btn btn-primary" onclick="logarComGoogle()">Logar com o Google</button>
+
+        </form>
+       </div>
+
+       <!--criar login -->
+
+        <div id="pageCriaUsuario" class="divPage">
+        <form  id="formpageCriaUsuario" >
+          <label for="email_login_criar" >login</label>
+          <input type="text" id="email_login_criar" class="form-control">
+          <label for="senha_login" >senha</label>
+          <input type="password" id="senha_login_criar" class="form-control">   
+          <br> 
+
+
+           <button class="btn btn-primary" onclick="criarUsuario()">criar usuario</button>
+           <button class="btn btn-primary" onclick="PageLogin()">Voltar</button>
+        </form>
+       </div>
+
+
+      </body>
+        <script src="js/login.js"></script>
+         <script src="js/main.js"></script>
+        <script src="js/contatos.js"></script>
+  </html>
